@@ -124,8 +124,9 @@ GameObject:
   - component: {fileID: 38731335}
   - component: {fileID: 38731334}
   - component: {fileID: 38731333}
+  - component: {fileID: 38731337}
   m_Layer: 0
-  m_Name: tetris_dr_mario_sprites_virus_9
+  m_Name: shmupAsteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5b721d1519b1c4e9265a109609b1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  hp: 1
 --- !u!212 &38731335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,6 +222,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &38731337
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 38731332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
 --- !u!1 &1517294853
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,9 +248,10 @@ GameObject:
   - component: {fileID: 1517294856}
   - component: {fileID: 1517294855}
   - component: {fileID: 1517294854}
+  - component: {fileID: 1517294858}
   m_Layer: 0
   m_Name: ShmupPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,6 +346,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!66 &1517294858
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517294853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 61261961206331786, guid: 697d80a3955ad14499ec2f207fcbe829,
+      type: 2}
+    m_ColliderPaths:
+    - - X: 400000
+        Y: 800000
+      - X: -400000
+        Y: 800000
+      - X: -400000
+        Y: -800000
+      - X: 400000
+        Y: -800000
+  - m_Collider: {fileID: 61174992011091618, guid: 697d80a3955ad14499ec2f207fcbe829,
+      type: 2}
+    m_ColliderPaths:
+    - - X: 1200000
+        Y: 0
+      - X: -1200000
+        Y: 0
+      - X: -1200000
+        Y: -800000
+      - X: 1200000
+        Y: -800000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.120000005, y: 0}
+      - {x: 0.04, y: 0}
+      - {x: 0.04, y: 0.08}
+      - {x: -0.04, y: 0.08}
+      - {x: -0.04, y: 0}
+      - {x: -0.120000005, y: 0}
+      - {x: -0.120000005, y: -0.08}
+      - {x: 0.120000005, y: -0.08}
+  m_VertexDistance: 0.0005
 --- !u!1 &1683825358
 GameObject:
   m_ObjectHideFlags: 0
