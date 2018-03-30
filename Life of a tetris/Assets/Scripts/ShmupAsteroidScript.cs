@@ -20,6 +20,7 @@ public class ShmupAsteroidScript : AbstractShmupEnemyScript {
 	void Update () {
 		Moviment ();
 		LifeManagement ();
+		OutOfBorders ();
 	}
 
 	void Moviment (){

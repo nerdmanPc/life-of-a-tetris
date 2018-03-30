@@ -15,4 +15,8 @@ public class BulletScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		Destroy(this.gameObject);
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		Destroy(this.gameObject);;
+	}
 }

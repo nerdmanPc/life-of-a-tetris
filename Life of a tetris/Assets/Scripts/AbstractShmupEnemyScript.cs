@@ -16,6 +16,17 @@ public class AbstractShmupEnemyScript : MonoBehaviour {
 	protected void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Bullet")
 			hp = hp - 1;
+	}
 
+	protected void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Bullet")
+			hp = hp - 1;
+	}
+
+	protected void OutOfBorders(){
+		if (this.transform.position.x > 2.2f)
+			this.transform.position = new Vector3 (-2.15f, this.transform.position.y, this.transform.position.z);
+		if (this.transform.position.x < -2.2f)
+			this.transform.position = new Vector3 (2.15f, this.transform.position.y, this.transform.position.z);
 	}
 }
