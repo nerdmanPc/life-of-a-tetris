@@ -24,7 +24,7 @@ public class ShmupAsteroidScript : AbstractShmupEnemyScript {
 	}
 
 	void Moviment (){
-		rb2d.velocity = new Vector3( speedX, -0.5f, 0f);
+		rb2d.velocity = new Vector3( speedX, -1f, 0f);
 		transform.Rotate (0f, 0f, _rotation * 90f * Time.deltaTime);
 	}
 
